@@ -1,0 +1,22 @@
+# Example of use: ./create-pdf rust.pdf
+echo "Init"
+pandoc src/* \
+    -f gfm \
+    --toc \
+    --toc-depth=5 \
+    --include-before-body conf/cover.tex \
+    --include-in-header conf/chapter_break.tex \
+    --include-in-header conf/inline_code.tex \
+    --include-in-header conf/bullet_style.tex \
+    --include-in-header conf/pdf_properties.tex \
+    --highlight-style conf/pygments.theme \
+    -V toc-title='Índice' \
+    -V linkcolor:blue \
+    -V geometry:a4paper \
+    -V geometry:margin=2cm \
+    -V fontsize=12pt \
+    -V mainfont="DejaVu Serif" \
+    -V monofont="DejaVu Sans Mono" \
+    --pdf-engine=xelatex \
+    -o "$1"
+
