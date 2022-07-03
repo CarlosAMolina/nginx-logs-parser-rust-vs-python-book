@@ -16,6 +16,8 @@ If the italic format for the DejaVu Serif font does not work, run:
 
 ```bash
 sudo apt install ttf-dejavu-extra
+# or
+sudo apt install fonts-dejavu-extra
 ```
 
 ## Resources
