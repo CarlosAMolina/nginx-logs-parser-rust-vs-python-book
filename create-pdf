@@ -1,5 +1,12 @@
 # Example of use: ./create-pdf rust.pdf
 echo "Init"
+
+if [ "$#" -eq 0 ]; then
+  OUTPUT_FILE="rust.pdf"
+else
+  OUTPUT_FILE="$1"
+fi
+
 pandoc src/* \
     -f gfm \
     --toc \
@@ -10,7 +17,7 @@ pandoc src/* \
     --include-in-header conf/bullet_style.tex \
     --include-in-header conf/pdf_properties.tex \
     --highlight-style conf/pygments.theme \
-    -V toc-title='Índice' \
+    -V toc-title="Índice" \
     -V linkcolor:blue \
     -V geometry:a4paper \
     -V geometry:margin=2cm \
@@ -18,5 +25,7 @@ pandoc src/* \
     -V mainfont="DejaVu Serif" \
     -V monofont="DejaVu Sans Mono" \
     --pdf-engine=xelatex \
-    -o "$1"
+    -o "$OUTPUT_FILE"
+
+echo "Output file: $OUTPUT_FILE"
 
