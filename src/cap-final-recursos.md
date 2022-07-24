@@ -14,7 +14,13 @@ Rust BufReader y BufWriter:
 
 <https://doc.rust-lang.org/std/io/struct.BufWriter.html>
 
-Programa que convierte archivos de logs en `csv`:
+Programa tratado en este documento para convertir logs de Nginx a `csv`:
 
 <https://github.com/CarlosAMolina/nginx-logs>
+
+Docker Rust
+
+<https://www.youtube.com/watch?v=Y_drrlCFkq8>
+
+<https://github.com/atareao/cronirs/blob/main/Dockerfile>
 
