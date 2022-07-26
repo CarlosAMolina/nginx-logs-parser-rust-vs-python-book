@@ -13,11 +13,11 @@ Como imagen para compilar el binario, se utiliza la imagen oficial de Rust, en s
 Estas son las imágenes creadas por el archivo Dockerfile:
 
 ```bash
-REPOSITORY        TAG           IMAGE ID       CREATED         SIZE
-rust-nginx-logs   latest        9333f909cfe3   8 minutes ago   9.86MB
-<none>            <none>        bbc7a0e4a8b9   8 minutes ago   2.1GB
-rust              1.62.1-slim   803aa6cea85b   5 days ago      714MB
-alpine            3.16          d7d3d98c851f   6 days ago      5.53MB
+REPOSITORY        TAG           IMAGE ID       SIZE
+rust-nginx-logs   latest        9333f909cfe3   9.86MB
+<none>            <none>        bbc7a0e4a8b9   2.1GB
+rust              1.62.1-slim   803aa6cea85b   714MB
+alpine            3.16          d7d3d98c851f   5.53MB
 ```
 
 Es decir, para compilar y ejecutar el programa, se requieren **2,83 GB**.
@@ -25,9 +25,9 @@ Es decir, para compilar y ejecutar el programa, se requieren **2,83 GB**.
 Tras eliminar las imágenes no necesarias para lanzar el programa, quedan las siguientes:
 
 ```bash
-REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
-rust-nginx-logs   latest    9333f909cfe3   12 minutes ago   9.86MB
-alpine            3.16      d7d3d98c851f   6 days ago       5.53MB
+REPOSITORY        TAG       IMAGE ID       SIZE
+rust-nginx-logs   latest    9333f909cfe3   9.86MB
+alpine            3.16      d7d3d98c851f   5.53MB
 ```
 
 Por lo que, para ejecutar el programa son necesarios un total de **15,39 MB**.
@@ -50,9 +50,9 @@ Al contrario que en Rust, no es necesario compilar el programa; solo hace falta 
 Tras construir las imágenes definidas en el archivo Dockerfile, queda:
 
 ```bash
-REPOSITORY          TAG                 IMAGE ID       CREATED         SIZE
-python-nginx-logs   latest              281c8db30c3f   4 minutes ago   47.4MB
-python              3.9.13-alpine3.16   0c3301b7a3b8   7 days ago      47.4MB
+REPOSITORY          TAG                 IMAGE ID       SIZE
+python-nginx-logs   latest              281c8db30c3f   47.4MB
+python              3.9.13-alpine3.16   0c3301b7a3b8   47.4MB
 ```
 
 En este caso, no es posible borrar ninguna imagen por lo que, el espacio requerido por python es de **94.8MB**:
